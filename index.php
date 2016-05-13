@@ -20,12 +20,16 @@
     	<ul>
 	     <?php foreach ($aventure_data as $id => $item) { ?>
 	            <li>
-                    <p><?= $item['nom'] ?>, <span class=".prix"><?= $item['prix'] ?></span></p>
+                    <p class="nom"><?= $item['nom'] ?></p>
                     <img src="<?= $item['photo'] ?>" alt=""/>
-	            </li>
+                    <p class="prix"><?= $item['prix'] ?>$</p>
+              </li>
 	        <?php } ?>
 	    </ul>
-    </div>  
+    </div>
+    <?php 
+      require('include/views/bottom-page/footer.php');
+     ?>  
   </section>
 
 
@@ -38,12 +42,16 @@
     	<ul>
 	     <?php foreach ($sciencefiction_data as $id => $item) { ?>
 	            <li>
-                    <p><?= $item['nom'] ?>, <span class=".prix"><?= $item['prix'] ?></span></p>
+                    <p class="nom"><?= $item['nom'] ?></p>
                     <img src="<?= $item['photo'] ?>" alt=""/>
+                    <p class="prix"><?= $item['prix'] ?>$</p>
 	            </li>
 	        <?php } ?>
 	    </ul>
     </div>
+    <?php 
+      require('include/views/bottom-page/footer.php');
+     ?>
   </section>
 
 
@@ -56,12 +64,16 @@
     	<ul>
 	     <?php foreach ($biographie_data as $id => $item) { ?>
 	            <li>
-                    <p><?= $item['nom'] ?>, <span class=".prix"><?= $item['prix'] ?></span></p>
+                    <p class="nom"><?= $item['nom'] ?></p>
                     <img src="<?= $item['photo'] ?>" alt=""/>
+                    <p class="prix"><?= $item['prix'] ?>$</p>
 	            </li>
 	        <?php } ?>
 	    </ul>
     </div>
+    <?php 
+      require('include/views/bottom-page/footer.php');
+     ?>
   </section>
 
 
@@ -74,12 +86,16 @@
     	<ul>
 	     <?php foreach ($policier_data as $id => $item) { ?>
 	            <li>
-                    <p><?= $item['nom'] ?>, <span class=".prix"><?= $item['prix'] ?></span></p>
+                    <p class="nom"><?= $item['nom'] ?></p>
                     <img src="<?= $item['photo'] ?>" alt=""/>
+                    <p class="prix"><?= $item['prix'] ?>$</p>
 	            </li>
 	        <?php } ?>
 	    </ul>
     </div>
+    <?php 
+      require('include/views/bottom-page/footer.php');
+     ?>
   </section>
 
 
@@ -92,12 +108,16 @@
     	<ul>
 	     <?php foreach ($fantastique_data as $id => $item) { ?>
 	            <li>
-                    <p><?= $item['nom'] ?>, <span class=".prix"><?= $item['prix'] ?></span></p>
+                    <p class="nom"><?= $item['nom'] ?></p>
                     <img src="<?= $item['photo'] ?>" alt=""/>
+                    <p class="prix"><?= $item['prix'] ?>$</p>
 	            </li>
 	        <?php } ?>
 	    </ul>
     </div>
+    <?php 
+      require('include/views/bottom-page/footer.php');
+     ?>
   </section>
 
 </body>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0b1e3953-86f4-47ec-8090-f8bc8a4b4b89" name="livre-awesome.projetisi.com" url="">
+        <fileTransfer host="panel.projetisi.com" port="21" password="dfc8dfcfdfc4dfcedfcbdfc7dfc5dfc4" username="bendamon">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
