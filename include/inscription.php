@@ -2,6 +2,7 @@
 var_dump($_POST);
 $receiving = ('POST' === $_SERVER['REQUEST_METHOD']);
 
+<<<<<<< HEAD:inscription.php
 //validation du nom
 $nom = "";
 $nom_valide = true;
@@ -26,12 +27,32 @@ if ($receiving && array_key_exists('prenom', $_POST)) {
 $email = "";
 $email_valide = true;
 if($receiving && array_key_exists('email',$_POST)){
+=======
+// $nom = "";
+// $nom_valide = true;
+// if (array_key_exists('nom', $_POST)) {
+//     $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
+//     $nom_valide = (1 === preg_match('/\w{2,}/', $nom));
+//     if ( ! $nom_valide) {
+//         $nom_msg_validation = "**Le nom doit comporter au moins deux lettres";
+//     }
+// }
+if (array_key_exists('firstname',$_POST) && !empty(trim($_POST['firstname']))) {
+    $firstname = $_POST['firstname'];
+}
+if (array_key_exists('lastname',$_POST) && !empty(trim($_POST['lastname']))) {
+    $lastname = $_POST['lastname'];
+}
+
+if(array_key_exists('email',$_POST) && !empty(trim($_POST['email']))){
+>>>>>>> origin/master:include/inscription.php
     $email = $_POST['email'];
     $email_valide = ($email === filter_var($email, FILTER_VALIDATE_EMAIL));
     if (!$email_valide){
         $email_msg_validation = "**Ceci nest pas un courielle valide.";
     }
 }
+<<<<<<< HEAD:inscription.php
 $user = "";
 $user_valide = true;
 if ($receiving && array_key_exists('user', $_POST)) {
@@ -56,23 +77,39 @@ if($receiving && array_key_exists('repass',$_POST)){
     if(!$repass_valide) {
     $repass_msg_validation = "**Les mots de pass ne sont pas identique";
     }
+=======
+
+if(array_key_exists('username',$_POST) && !empty(trim($_POST['username']))){
+    $username = $_POST['username'];
 }
-$addresse = "";
+
+if(array_key_exists('pass',$_POST) && !empty(trim($_POST['pass']))){
+    $pass = $_POST['pass'];
+}
+
+if(array_key_exists('repass',$_POST) && !empty(trim($_POST['repass']))){
+    $repass = $_POST['repass'];
+>>>>>>> origin/master:include/inscription.php
+}
+
 if(array_key_exists('addresse',$_POST) && !empty(trim($_POST['addresse']))){
     $addresse = $_POST['addresse'];
 }
-$postal = "";
+
 if(array_key_exists('postal',$_POST) && !empty(trim($_POST['postal']))){
     $postal = $_POST['postal'];
 }
-$ville = "";
+
 if(array_key_exists('ville',$_POST) && !empty(trim($_POST['ville']))){
     $postal = $_POST['ville'];
 }
-$province = "";
+
 if(array_key_exists("province",$_POST) && !empty(trim($_POST['province']))){
     $province = $_POST["province"];
 }
+
+include('views/create.php')
+
 ?>
 <style>
     .msgvalidation {
@@ -81,10 +118,22 @@ if(array_key_exists("province",$_POST) && !empty(trim($_POST['province']))){
 </style>
 
 <div>
+<<<<<<< HEAD:inscription.php
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <?php if ( ! $user_valide) { echo "<p><span class='msgvalidation'>$user_msg_validation<span></p>"; } ?>
         <p><label for="user">Pseudo : </label>
             <input type="text" name="user" id="user" value="<?= $user ?>" />
+=======
+    <form method="post" action="create.php">
+        <p><label for="firstname">Prenom : </label>
+            <input type="text" name="firstname" id="firstname" value="<?= $firstname ?>"/>
+        </p>
+        <p><label for="lastname">lastname : </label>
+            <input type="text" name="lastname" id="lastname" value="<?= $lastname ?>"/>
+        </p>
+        <p><label for="username">username : </label>
+            <input type="text" name="username" id="username" value="<?= $username ?>" />
+>>>>>>> origin/master:include/inscription.php
         </p>
         <?php if ( ! $pass_valide) { echo "<p><span class='msgvalidation'>$pass_msg_validation<span></p>"; } ?>
         <?php if ( ! $repass_valide) { echo "<p><span class='msgvalidation'>$repass_msg_validation<span></p>"; } ?>
@@ -95,6 +144,7 @@ if(array_key_exists("province",$_POST) && !empty(trim($_POST['province']))){
             <input type="password" name="repass" id="repass" value="<?= $repass ?>" />
         </p>
         <p>Information personelle :</p>
+<<<<<<< HEAD:inscription.php
         <?php if ( ! $nom_valide) { echo "<p><span class='msgvalidation'>$nom_msg_validation<span></p>"; } ?>
         <p><label for="nom">Nom : </label>
         <input type="text" name="nom" id="nom" value="<?= $nom ?>"/>
@@ -104,6 +154,10 @@ if(array_key_exists("province",$_POST) && !empty(trim($_POST['province']))){
         <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>"/>
         </p>
         <?php if ( ! $email_valide) { echo "<p><span class='msgvalidation'>$email_msg_validation<span></p>"; } ?>
+=======
+        <?php if ( ! $nom_valide) { echo "<span class='msg_validation'>$nom_msg_validation<span>"; } ?>
+        
+>>>>>>> origin/master:include/inscription.php
         <p><label for="email">Addresse Courielle : </label>
         <input type="text" name="email" id="email" value="<?= $email ?>"/>
         </p>
